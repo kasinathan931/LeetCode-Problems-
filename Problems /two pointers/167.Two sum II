@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        int ans[2], add =0;
+        int l = 0;
+        int r = numbers.size() - 1;
+        while (l<r){
+            add = numbers[l] + numbers[r];
+            if (add > target){
+                r--;
+            }else if(add < target) {
+                l++;
+            }else {
+                return {l+1, r+1};
+            }
+        }
+        return {-1, 1};
+    }
+};
